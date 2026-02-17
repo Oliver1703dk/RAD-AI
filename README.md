@@ -22,23 +22,36 @@ arc42 and C4 were designed for deterministic software. AI-augmented ecosystems i
 
 ```
 RAD-AI/
+├── paper/                              # Research paper
+│   └── full_paper/                     #   LaTeX source (main.tex) and PDF
 ├── templates/                          # Reusable blank templates
 │   ├── arc42-extensions/               #   8 arc42 section extensions
 │   ├── c4-extensions/                  #   3 C4 diagram extensions
 │   └── compliance-checklist.md         #   EU AI Act Annex IV checklist
-└── examples/
-    ├── smart-urban-mobility/           # Illustrative ecosystem case study
-    │   ├── arc42-extensions/           #   Filled-in arc42 extensions
-    │   ├── c4-diagrams/               #   C4 diagrams with AI stereotypes
-    │   └── compliance-checklist.md    #   Filled-in compliance tracking
-    ├── uber-michelangelo/              # Comparative analysis: Uber
-    │   ├── standard/                  #   Standard arc42/C4 (showing gaps)
-    │   ├── rad-ai/                    #   RAD-AI extended documentation
-    │   └── gap-analysis.md            #   Side-by-side coverage comparison
-    └── netflix-metaflow/               # Comparative analysis: Netflix
-        ├── standard/                  #   Standard arc42/C4 (showing gaps)
-        ├── rad-ai/                    #   RAD-AI extended documentation
-        └── gap-analysis.md            #   Side-by-side coverage comparison
+├── examples/
+│   └── smart-urban-mobility/           # Illustrative ecosystem case study
+│       ├── arc42-extensions/           #   Filled-in arc42 extensions
+│       ├── c4-diagrams/               #   C4 diagrams with AI stereotypes
+│       └── compliance-checklist.md    #   Filled-in compliance tracking
+├── comparative_analysis/               # Evaluation: production AI platforms
+│   ├── uber-michelangelo/              #   Comparative analysis: Uber
+│   │   ├── standard/                  #     Standard arc42/C4 (showing gaps)
+│   │   ├── rad-ai/                    #     RAD-AI extended documentation
+│   │   └── gap-analysis.md            #     Side-by-side coverage comparison
+│   └── netflix-metaflow/               #   Comparative analysis: Netflix
+│       ├── standard/                  #     Standard arc42/C4 (showing gaps)
+│       ├── rad-ai/                    #     RAD-AI extended documentation
+│       └── gap-analysis.md            #     Side-by-side coverage comparison
+└── documentation/                      # Reference documentation
+    ├── framework-overview.md           #   RAD-AI framework overview
+    ├── arc42-extensions-reference.md   #   Detailed arc42 extension reference
+    ├── c4-extensions-reference.md      #   Detailed C4 extension reference
+    ├── eu-ai-act-compliance-guide.md   #   Compliance mapping guide
+    ├── adoption-guide.md               #   Incremental adoption guide
+    ├── evaluation-results.md           #   Evaluation details
+    ├── research-background.md          #   Research context
+    ├── glossary.md                     #   Terminology
+    └── case-studies/                   #   Extended case study write-ups
 ```
 
 ## What's in This Repo
@@ -55,27 +68,32 @@ See the [templates README](templates/README.md) for a full listing and usage ins
 
 ### [`examples/smart-urban-mobility/`](examples/smart-urban-mobility/)
 
-A fully worked example applying RAD-AI to a smart urban mobility ecosystem with three AI components:
+A fully worked example applying RAD-AI to a smart urban mobility ecosystem with four AI components:
 
 | Component | Task | EU AI Act Risk |
 |-----------|------|----------------|
 | Route Optimizer | Optimal route selection across transport modes | Limited |
 | Demand Predictor | Time-series demand forecasting per zone/mode | Limited |
 | Anomaly Detector | Real-time safety anomaly detection | **High** (Annex III) |
+| Cross-Operator Data Sharing Platform | Federated feature store for anonymized data exchange | Limited |
 
 Shows exactly what each template looks like when filled out, including C4 diagrams with Mermaid syntax and a completed compliance checklist. The high-risk anomaly detector demonstrates documentation requirements under the EU AI Act.
 
-### [`examples/uber-michelangelo/`](examples/uber-michelangelo/)
+### [`comparative_analysis/uber-michelangelo/`](comparative_analysis/uber-michelangelo/)
 
-Comparative analysis applying both standard arc42/C4 and RAD-AI to Uber's Michelangelo ML platform (5,000+ production models, 10-15M predictions/sec). Includes:
+Comparative analysis applying both standard arc42/C4 and RAD-AI to Uber's Michelangelo ML platform (5,000+ production models, 15M predictions/sec). Includes:
 
 - **Standard documentation** (arc42 S3, S5, S6; C4 Levels 1-2) showing what current frameworks can capture
 - **RAD-AI documentation** (all 8 arc42 extensions + 3 C4 extensions) showing what the extensions reveal
 - **Gap analysis** mapping 10 AI-specific concerns (Feature Store topology, model lifecycle, drift monitoring, non-deterministic boundaries, feedback loops, deployment safety, data lineage, responsible AI, AI quality, AI decisions) to standard vs. RAD-AI coverage
 
-### [`examples/netflix-metaflow/`](examples/netflix-metaflow/)
+### [`comparative_analysis/netflix-metaflow/`](comparative_analysis/netflix-metaflow/)
 
 Same comparative structure applied to Netflix's ML infrastructure (3,000+ ML projects, Metaflow/Maestro orchestration). Highlights different gaps than Uber: invisible DAG dependencies, signal-based cross-workflow coordination, streaming vs. batch distinction, and undocumented A/B testing infrastructure.
+
+### [`documentation/`](documentation/)
+
+Reference documentation covering the full RAD-AI framework, detailed extension references, EU AI Act compliance guide, and an incremental adoption guide.
 
 ## Quick Start
 
@@ -126,7 +144,7 @@ If you use RAD-AI in your work, please cite:
 ```bibtex
 @inproceedings{larsen2026radai,
   title     = {{RAD-AI}: Rethinking Architecture Documentation for {AI}-Augmented Ecosystems},
-  author    = {Larsen, Oliver},
+  author    = {Larsen, Oliver Aleksander and Moghaddam, Mahyar T.},
   booktitle = {Proceedings of the 1st International Workshop on Architecting
                Next Generation of Ecosystems (ANGE 2026)},
   year      = {2026},
