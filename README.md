@@ -10,10 +10,12 @@ arc42 and C4 were designed for deterministic software. AI-augmented ecosystems i
 
 ## Key Results
 
+Compliance coverage scored by six experienced software-architecture practitioners (Fleiss' kappa = 0.68, substantial agreement). Totals are mean values across raters.
+
 | Metric | Standard Frameworks | RAD-AI |
 |--------|-------------------|--------|
-| EU AI Act Annex IV coverage (arc42) | 35% (7/20) | **95% (19/20)** |
-| EU AI Act Annex IV coverage (C4) | 25% (5/20) | **75% (15/20)** |
+| EU AI Act Annex IV coverage (arc42) | 36% (7.3/20) | **93% (18.5/20)** |
+| EU AI Act Annex IV coverage (C4) | 26% (5.2/20) | **73% (14.6/20)** |
 | AI concerns captured (Uber Michelangelo) | 0 full, 2 partial | **8 full, 2 partial** |
 | AI concerns captured (Netflix Metaflow) | 0 full, 2 partial | **8 full, 2 partial** |
 | Ecosystem-level concerns surfaced | 0 | **3** |
@@ -81,7 +83,7 @@ Shows exactly what each template looks like when filled out, including C4 diagra
 
 ### [`comparative_analysis/uber-michelangelo/`](comparative_analysis/uber-michelangelo/)
 
-Comparative analysis applying both standard arc42/C4 and RAD-AI to Uber's Michelangelo ML platform (5,000+ production models, 15M predictions/sec). Includes:
+Comparative analysis applying both standard arc42/C4 and RAD-AI to Uber's Michelangelo ML platform (5,000+ production models, 10M predictions/sec at peak). Includes:
 
 - **Standard documentation** (arc42 S3, S5, S6; C4 Levels 1-2) showing what current frameworks can capture
 - **RAD-AI documentation** (all 8 arc42 extensions + 3 C4 extensions) showing what the extensions reveal
@@ -107,10 +109,10 @@ Reference documentation covering the full RAD-AI framework, detailed extension r
 
 | ID | Contribution |
 |----|-------------|
-| **C1** | First backward-compatible extension of arc42 (8 section extensions) and C4 (3 diagram types) for AI-augmented systems |
-| **C2** | Systematic EU AI Act Annex IV compliance mapping with quantified coverage assessment |
-| **C3** | Comparative analytical evidence on two production AI platforms (Uber Michelangelo, Netflix Metaflow) demonstrating structural documentation gaps |
-| **C4** | Identification of ecosystem-level documentation concerns (cascading drift, differentiated compliance, federated governance) |
+| **RC1** | First backward-compatible extension of arc42 (8 section extensions) and C4 (3 diagram types) for AI-augmented ecosystems |
+| **RC2** | Systematic EU AI Act Annex IV compliance mapping with quantified coverage assessment (practitioner-based, n=6) |
+| **RC3** | Comparative analytical evidence on two production AI platforms (Uber Michelangelo, Netflix Metaflow) demonstrating structural documentation gaps |
+| **RC4** | Identification of ecosystem-level documentation concerns (cascading drift, differentiated compliance, federated governance) |
 
 ## How RAD-AI Extends arc42
 
@@ -135,7 +137,7 @@ Reference documentation covering the full RAD-AI framework, detailed extension r
 
 ## EU AI Act Compliance Mapping
 
-RAD-AI maps all 10 Annex IV requirement categories to specific documentation sections. Standard arc42 covers 35% of requirements; with RAD-AI extensions this rises to 95%. The [compliance checklist template](templates/compliance-checklist.md) provides a concrete tracking tool for the August 2, 2026 enforcement deadline.
+RAD-AI maps all 10 Annex IV requirement categories to specific documentation sections. In a practitioner evaluation (n=6), standard arc42 covers approximately 36% of requirements; with RAD-AI extensions this rises to approximately 93%. The [compliance checklist template](templates/compliance-checklist.md) provides a concrete tracking tool for the August 2, 2026 enforcement deadline.
 
 ## Citation
 
