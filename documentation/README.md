@@ -36,7 +36,7 @@ RAD-AI (Rethinking Architecture Documentation for AI-Augmented Ecosystems) provi
 
 ## Key Contributions
 
-- **C1:** First backward-compatible extension of arc42 (8 section extensions) and C4 (3 diagram types) for documenting AI-augmented systems.
-- **C2:** Systematic EU AI Act Annex IV compliance mapping with quantified coverage assessment.
-- **C3:** Comparative analytical evidence on two production AI platforms (Uber Michelangelo, Netflix Metaflow/Maestro) demonstrating that documentation gaps are structural properties of current frameworks, not domain-specific oversights.
-- **C4:** Identification of ecosystem-level documentation concerns (cascading drift, differentiated compliance, federated governance) that are invisible in standard frameworks.
+- **RC1:** First backward-compatible extension of arc42 (8 section extensions) and C4 (3 diagram types) for documenting AI-augmented ecosystems.
+- **RC2:** Systematic EU AI Act Annex IV compliance mapping with quantified coverage assessment (practitioner-based, n=6).
+- **RC3:** Comparative analytical evidence on two production AI platforms (Uber Michelangelo, Netflix Metaflow/Maestro) demonstrating that documentation gaps are structural properties of current frameworks, not domain-specific oversights.
+- **RC4:** Identification of ecosystem-level documentation concerns (cascading drift, differentiated compliance, federated governance) that are invisible in standard frameworks.

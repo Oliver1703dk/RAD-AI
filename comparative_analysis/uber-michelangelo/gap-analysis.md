@@ -66,7 +66,7 @@ This document provides a detailed comparison mapping each AI-specific concern to
 **RAD-AI (E8):** The Operational AI View documents D3's architecture, monitor types (null rate, percentile, statistical, categorical, foreign key, boolean), performance metrics (95.23% detection accuracy, 20x improvement in time-to-detect, ~$0.01 per dataset compute cost), and integration with the retraining pipeline.
 
 **Michelangelo Example:**
-- Before D3, data quality issues took an average of 45+ days to detect. D3 reduced this to ~2 days. At 15 million predictions per second, a 45-day detection window means trillions of potentially affected predictions. This operational improvement is architecturally significant but invisible in standard documentation.
+- Before D3, data quality issues took an average of 45+ days to detect. D3 reduced this to ~2 days. At 10 million predictions per second at peak, a 45-day detection window means trillions of potentially affected predictions. This operational improvement is architecturally significant but invisible in standard documentation.
 - D3 monitors 100,000+ data quality indicators across 300+ Tier 1 datasets. The monitoring architecture (one-time profiler for 90-day baseline, daily scheduled anomaly detection, Prophet-based dynamic thresholds) is a substantial system in its own right, with its own infrastructure, compute costs, and operational procedures.
 - D3's alerting integrates with Michelangelo's retraining pipeline: critical drift on model input features can trigger automated retraining. This monitoring-to-retraining loop is a core operational pattern with no standard arc42 representation.
 

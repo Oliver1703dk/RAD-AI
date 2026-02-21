@@ -10,7 +10,7 @@
 
 ## 1. System Overview
 
-Uber Michelangelo is Uber's internal ML-as-a-service platform, covering the full machine learning lifecycle: data management, feature engineering, model training, evaluation, deployment, prediction serving, and monitoring. First described publicly in 2017, Michelangelo has since grown into one of the largest production ML platforms in industry, managing over 5,000 production models that collectively serve approximately 15 million predictions per second at peak load.
+Uber Michelangelo is Uber's internal ML-as-a-service platform, covering the full machine learning lifecycle: data management, feature engineering, model training, evaluation, deployment, prediction serving, and monitoring. First described publicly in 2017, Michelangelo has since grown into one of the largest production ML platforms in industry, managing over 5,000 production models that collectively serve approximately 10 million predictions per second at peak load.
 
 ### Key Metrics
 
@@ -73,7 +73,7 @@ Model interdependencies compound this problem. The output of the Demand Forecast
 
 D3's drift detection architecture, which tracks 100,000+ data quality monitors and reduced time-to-detect from 45 days to 2 days, has no home in the Runtime View (arc42 Section 6). The Runtime View documents request-response flows and batch processing patterns. Continuous monitoring of data distributions for drift detection is not a runtime pattern that standard arc42 recognizes.
 
-Before D3, data quality issues took an average of 45+ days to detect. At 15 million predictions per second, a 45-day detection window means trillions of potentially affected predictions. D3's monitoring architecture (one-time profiler for 90-day baseline, daily scheduled anomaly detection, Prophet-based dynamic thresholds) is a substantial system in its own right, yet standard arc42 and C4 provide no section or diagram type to document it.
+Before D3, data quality issues took an average of 45+ days to detect. At 10 million predictions per second at peak, a 45-day detection window means trillions of potentially affected predictions. D3's monitoring architecture (one-time profiler for 90-day baseline, daily scheduled anomaly detection, Prophet-based dynamic thresholds) is a substantial system in its own right, yet standard arc42 and C4 provide no section or diagram type to document it.
 
 D3's alerting also integrates with Michelangelo's retraining pipeline: critical drift on model input features can trigger automated retraining. This monitoring-to-retraining feedback loop is a core operational pattern with no standard arc42 representation.
 
